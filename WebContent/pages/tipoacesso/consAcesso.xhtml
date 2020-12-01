@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<br />
+		<h:form id="frmConsultaUsuario">
+			<h4>Consulta de Acessos</h4>
+			<hr />
+			<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+			<div align="right">
+				<p:commandLink ajax="false" rendered="#{usuarioLogadoMB.usuario.tipoacesso.acesso.cadacesso}"
+								styleClass="btn btn-dark" value="Novo" action="#{acessoMB.novo()}" />
+			</div>
+			<p:dataTable id="idTabelaAceso" var="acesso"
+				value="#{acessoMB.listaAcesso}" style="border:none;"
+				class="tabelacontas" scrollRows="10" scrollable="true"
+				scrollHeight="300" selectionMode="single"
+				rowKey="#{acesso.idtipoacesso}">
+
+
+				<p:column headerText="Descrição" sortBy="#{acesso.descricao}"
+					style="font-size:12px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText value="#{acesso.descricao}" />
+				</p:column>
+				<p:column headerText=""
+					style="width:8%; text-align:left; font-size:12px; background:white; color:black; border:#fff;">
+					<p:commandLink ajax="false" action="#{acessoMB.editar(acesso)}"
+						style="text-align: left;color:black;">
+						<span data-feather="edit"></span>
+					</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15906900520900" configfile="/sarafloripaMobile/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="4210" id="pf15907189013420" referenceLink="//@navigationRule.23/@fromViewId|" outlinks="pf15907189013421 pf15907189013422 pf15907189013423 pf15907189013424 pf15907189294069 pf15910304391200 pf15910304391201 pf15910368829174 pf15910368829175 pf15910368829176 pf15916395583250 pf15916395747664 pf15916395747665 pf15916622421368 pf15935651944320 pf15935652106362 pf15936229971500 pf15936230112902 pf15936967816734 pf15936967816735 pf15936967816736 pf15937961016446 pf15937961016457 pf15937961016458" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf15907189013435" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15907189013421" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dashboard.xhtml" x="338" y="562" id="pf15907189013436" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15907189013422" path="dashboard.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/fichainscricao.xhtml" x="338" y="946" id="pf15907189013437" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15907189013423" path="/pages/revisaovidas/fichainscricao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/conclusaoinscricao.xhtml" x="338" y="1330" id="pf15907189013438" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf15907189013424" path="/pages/revisaovidas/conclusaoinscricao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/inicioInscricaoRv.xhtml" x="338" y="1714" id="pf159071892940610" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15907189294069" path="/pages/revisaovidas/inicioInscricaoRv.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/consFichaInscricoes.xhtml" x="338" y="2098" id="pf15910304391212" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf15910304391200" path="/pages/revisaovidas/consFichasInscricoes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/consRevisaoVidas.xhtml" x="338" y="2482" id="pf15910304391213" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf15910304391201" path="/pages/revisaovidas/consRevisaoVidas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/cadRevisaoVidas.xhtml" x="338" y="2866" id="pf15910368829187" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf15910368829174" path="/pages/revisaovidas/cadRevisaoVidas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/cadUsuario.xhtml" x="338" y="3250" id="pf15910368829188" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf15910368829175" path="/pages/usuario/cadUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/consUsuario.xhtml" x="338" y="3634" id="pf15910368829189" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf15910368829176" path="/pages/usuario/consUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/usuario/alterarSenha.xhtml" x="338" y="4018" id="pf15916395583262" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf15916395583250" path="/pages/usuario/alterarSenha.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/tipoacesso/cadAcesso.xhtml" x="338" y="4402" id="pf15916395747676" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf15916395747664" path="/pages/tipoacesso/cadAcesso.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/tipoacesso/consAcesso.xhtml" x="338" y="4786" id="pf15916395747677" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf15916395747665" path="/pages/tipoacesso/consAcesso.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/revisaovidas/alterarFormaPagamento.xhtml" x="338" y="5170" id="pf15916622421369" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf15916622421368" path="/pages/revisaovidas/alterarFormaPagamento.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/tipoeventos/consTipoEventos.xhtml" x="338" y="5554" id="pf15935651944321" referenceLink="//@navigationRule.14/@navigationCase.0/@toViewId|" inlinks="pf15935651944320" path="/pages/tipoeventos/consTipoEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/tipoeventos/cadTipoEventos.xhtml" x="338" y="5938" id="pf15935652106363" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" inlinks="pf15935652106362" path="/pages/tipoeventos/cadTipoEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/consEventos.xhtml" x="338" y="6322" id="pf15936229971511" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" inlinks="pf15936229971500" path="/pages/eventos/consEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/cadEventos.xhtml" x="338" y="6706" id="pf15936230112903" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" inlinks="pf15936230112902" path="/pages/eventos/cadEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/formEventos.xhtml" x="338" y="7090" id="pf15936967816737" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" inlinks="pf15936967816734" path="/pages/eventos/formEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/inicioFormEventos.xhtml" x="338" y="7474" id="pf15936967816738" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf15936967816735" path="/pages/eventos/inicioFormEventos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/conclusaoInscricaoEvento.xhtml" x="338" y="7858" id="pf15936967816739" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" inlinks="pf15936967816736" path="/pages/eventos/conclusaoInscricaoEvento.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/eventos/consMembrosEvento.xhtml" x="338" y="8242" id="pf15937961016459" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" inlinks="pf15937961016446" path="/pages/eventos/consMembrosEvento.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/professores/consProfessores.xhtml" id="pf159379610164510" referenceLink="//@navigationRule.23/@navigationCase.0/@toViewId|" inlinks="pf15937961016457" path="/pages/professores/consProfessores.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/professores/cadProfessores.xhtml" id="pf159379610164611" referenceLink="//@navigationRule.23/@navigationCase.0/@toViewId|" inlinks="pf15937961016458" path="/pages/professores/cadProfessores.xhtml"/>
+  <links id="pf15907189013421" target="pf15907189013435" source="pf15907189013420" outcome="index" redirect="true"/>
+  <links id="pf15907189013422" target="pf15907189013436" source="pf15907189013420" outcome="dashboard" redirect="true"/>
+  <links id="pf15907189013423" target="pf15907189013437" source="pf15907189013420" outcome="fichainscricao" redirect="true"/>
+  <links id="pf15907189013424" target="pf15907189013438" source="pf15907189013420" outcome="conclusaoinscricao" redirect="true"/>
+  <links id="pf15907189294069" target="pf159071892940610" source="pf15907189013420" outcome="inicioInscricaoRv" redirect="true"/>
+  <links id="pf15910304391200" target="pf15910304391212" source="pf15907189013420" outcome="consFichasInscricoes" redirect="true"/>
+  <links id="pf15910304391201" target="pf15910304391213" source="pf15907189013420" outcome="consRevisaoVidas" redirect="true"/>
+  <links id="pf15910368829174" target="pf15910368829187" source="pf15907189013420" outcome="cadRevisaoVidas" redirect="true"/>
+  <links id="pf15910368829175" target="pf15910368829188" source="pf15907189013420" outcome="cadUsuario" redirect="true"/>
+  <links id="pf15910368829176" target="pf15910368829189" source="pf15907189013420" outcome="consUsuario" redirect="true"/>
+  <links id="pf15916395583250" target="pf15916395583262" source="pf15907189013420" outcome="alterarSenha" redirect="true"/>
+  <links id="pf15916395747664" target="pf15916395747676" source="pf15907189013420" outcome="cadAcesso" redirect="true"/>
+  <links id="pf15916395747665" target="pf15916395747677" source="pf15907189013420" outcome="consAcesso" redirect="true"/>
+  <links id="pf15916622421368" target="pf15916622421369" source="pf15907189013420" outcome="alterarFormaPagamento" redirect="true"/>
+  <links id="pf15935651944320" target="pf15935651944321" source="pf15907189013420" outcome="consTipoEventos" redirect="true"/>
+  <links id="pf15935652106362" target="pf15935652106363" source="pf15907189013420" outcome="cadTipoEventos" redirect="true"/>
+  <links id="pf15936229971500" target="pf15936229971511" source="pf15907189013420" outcome="consEventos" redirect="true"/>
+  <links id="pf15936230112902" target="pf15936230112903" source="pf15907189013420" outcome="cadEventos" redirect="true"/>
+  <links id="pf15936967816734" target="pf15936967816737" source="pf15907189013420" outcome="formEventos" redirect="true"/>
+  <links id="pf15936967816735" target="pf15936967816738" source="pf15907189013420" outcome="inicioFormEventos" redirect="true"/>
+  <links id="pf15936967816736" target="pf15936967816739" source="pf15907189013420" outcome="conclusaoInscricaoEvento" redirect="true"/>
+  <links id="pf15937961016446" target="pf15937961016459" source="pf15907189013420" outcome="consMembrosEvento" redirect="true"/>
+  <links id="pf15937961016457" target="pf159379610164510" source="pf15907189013420" outcome="consProfessores" redirect="true"/>
+  <links id="pf15937961016458" target="pf159379610164611" source="pf15907189013420" outcome="cadProfessores" redirect="true"/>
+</pageflow:Pageflow>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<br />
+		<h:form id="frmConsultaBanco">
+			<h4>Consulta de Revisões de Vidas</h4>
+			<hr />
+			<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+			<div class="form-row" style="width:100%">
+				<div class="form-group col-md-12" align="right">
+					<p:commandLink rendered="#{usuarioLogadoMB.usuario.tipoacesso.acesso.cadrevisao}"
+						ajax="false" styleClass="btn btn-dark" value="Novo"
+						action="#{revisaoVidasMB.novo()}" />
+				</div>
+			</div>
+			<p:dataTable id="idTabelaRevisao" var="revisao"
+				value="#{revisaoVidasMB.listaRevisao}" style="border:none;"
+				class="tabelacontas" scrollRows="10" scrollable="true"
+				scrollHeight="300" selectionMode="single"
+				rowKey="#{revisao.idrevisaovidas}">
+
+				<p:column headerText=""
+					style="width:14%; font-size:14px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText value="Revisão de Vidas" />
+				</p:column>
+				<p:column headerText="Data Inicial" sortBy="#"
+					style="width:14%; font-size:14px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText value="#{revisao.dataini}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Data Final" sortBy="#"
+					style="width:12%; font-size:14px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText value="#{revisao.datafin}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Vagas/Restam"
+					style="width:13%;font-size:14px; background:white; color:black; border:none;text-align:right;">
+					<h:outputText value="#{revisao.vagas}/#{revisao.npreenchido}"
+						style="color:red;" />
+				</p:column>
+				<p:column headerText="Organizador"
+					style="width:25%;font-size:14px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText value="#{revisao.equipe.nome}" />
+				</p:column>
+				<p:column headerText="Rede"
+					style="font-size:14px; background:white; color:black; border:none;text-align:left;">
+					<h:outputText
+						value="#{revisaoVidasMB.retornarRede(revisao.rede)}" />
+				</p:column>
+				<p:column headerText=""
+					style="width:10%; text-align:right; font-size:12px; background:white; color:black; border:#fff;">
+					<p:commandLink ajax="false"
+						action="#{revisaoVidasMB.editar(revisao)}"
+						title="Editar" style="text-align: left;color:black;"
+						>
+						<img src="../../resources/img/editar.svg" width="25%;" />
+					</p:commandLink>
+					<p:commandLink ajax="false"
+						action="#{revisaoVidasMB.revisionistas(revisao)}"
+						title="Lista de revisionistas" style="text-align: left;color:black;"
+						>
+						<img src="../../resources/img/revisionistas.svg" width="25%;" />
+					</p:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<h:form id="frmCadastroUsuario" acceptcharset="ISO-8859-1">
+
+			<div id="tudo">
+				<div style="display: block; padding: 4.1em;">
+
+					<h4>LANÇAMENTO DE EVENTO</h4>
+					<hr />
+					<br />
+					<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Tipo Evento</label>
+							<h:selectOneMenu id="exampleTipoEvento" style="width: 100%;"
+								immediate="true" value="#{cadEventosMB.tipoevento}"
+								converter="TipoEventoConverter" styleClass="form-control">
+								<f:selectItem itemLabel="Selecione" itemValue="0"
+									noSelectionOption="true" />
+								<f:selectItems value="#{cadEventosMB.listaTipoEvento}"
+									var="tipoEventoSelecionado" itemLabel="#{tipoEventoSelecionado.descricao}"
+									itemValue="#{tipoEventoSelecionado}" />
+								<f:attribute name="listaTipoEvento"
+									value="#{cadEventosMB.listaTipoEvento}" />
+							</h:selectOneMenu> 
+						</div>
+						<div class="form-group col-md-6">
+							<label>Nome do Evento</label>
+							<h:inputText value="#{cadEventosMB.evento.nome}"
+								class="form-control" placeholder="Email" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Data Inicio</label>
+							<h:inputText class="form-control"
+								value="#{cadEventosMB.evento.datainicio}"
+								mask="99/99/9999">
+								<f:convertDateTime pattern="dd/MM/yyyy"
+									timeZone="America/Sao_Paulo" />
+							</h:inputText>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Valor</label>
+							<h:inputText value="#{cadEventosMB.evento.valor}"
+								class="form-control" placeholder="Email" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Vagas Presenciais</label>
+							<h:inputText value="#{cadEventosMB.evento.vagaspresencial}"
+								class="form-control" placeholder="Email" />
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Vagas online ?</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadEventosMB.evento.vagasonline}" />
+							</div>
+
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Lançar este evento ?</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadEventosMB.evento.ativo}" />
+							</div>
+
+						</div>
+					</div>
+					<br />
+					<hr />
+					<div align="center">
+
+						<p:commandLink ajax="false" update="growl" 
+							styleClass="btn btn-success" value="Confirmar"
+							action="#{cadEventosMB.salvar()}" />
+
+						<p:commandLink ajax="false" styleClass="btn btn-danger" style="margin-left:1%;"
+							value="Cancelar" action="#{cadEventosMB.cancelar()}" />
+
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

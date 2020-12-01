@@ -1,0 +1,104 @@
+<h:form xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+	<nav
+		class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><p:outputLabel
+				value="Bem Vindo, #{usuarioLogadoMB.nomeUsuario}" /></a>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap"><p:commandLink ajax="false"
+					action="#{usuarioLogadoMB.deslogar()}" value="Sair"
+					styleClass="nav-link" /></li>
+		</ul>
+	</nav>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+					<div class="sidebar-sticky">
+
+						<ul class="nav flex-column">
+							<li class="nav-item"><a class="nav-link active" href="/sarafloripa/dashboard.jsf">
+									<span data-feather="home"></span> Dashboard <span
+									class="sr-only">(atual)</span>
+							</a></li>
+							<h:panelGroup rendered="#{usuarioLogadoMB.usuario.tipoacesso.acesso.cadastro}">
+								<li class="nav-item, dropdown"><a class="nav-link" href="#"
+									data-toggle="dropdown" role="button" aria-haspopup="true"
+									aria-expanded="false"> <span data-feather="file-plus"></span>
+										Cadastros
+								</a>
+									<ul class="dropdown-menu">
+										<li style="font-size: 12px;"><a class="nav-link"
+											href="/sarafloripa/pages/usuario/consUsuario.jsf"> <span
+												data-feather="users"></span> Usuário
+										</a> </li>
+										<li style="font-size: 12px;"><a class="nav-link"
+											href="sarafloripa/pages/tipoacesso/consAcesso.jsf"> <span
+												data-feather="users"></span> Tipo Acesso
+										</a> </li>
+									</ul></li>
+							</h:panelGroup>
+							<li class="nav-item, dropdown"><a class="nav-link" href="#"
+								data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"> <span data-feather="file-plus"></span>
+									Revisão de Vidas
+							</a>
+								<ul class="dropdown-menu">
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/revisaovidas/consRevisaoVidas.jsf"> <span
+											data-feather="list"></span> Lançamentos
+									</a> </li>
+								</ul></li>
+							<li class="nav-item, dropdown"><a class="nav-link" href="#"
+								data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"> <span data-feather="file-plus"></span>
+									Eventos
+							</a>
+								<ul class="dropdown-menu">
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/tipoeventos/consTipoEventos.jsf"> <span
+											data-feather="file-text"></span> Tipo Eventos
+									</a></li>
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/eventos/consEventos.jsf"> <span
+											data-feather="list"></span> Lançamentos
+									</a></li>
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/eventos/inicioFormEventos.jsf"> <span
+											data-feather="list"></span> Formulário
+									</a></li>
+								</ul></li>
+							<li class="nav-item, dropdown"><a class="nav-link" href="#"
+								data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false"> <span data-feather="file-plus"></span>
+									Relatório
+							</a>
+								<ul class="dropdown-menu">
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/relatorios/relatorioRevisaoEquipe.jsf"> <span
+											data-feather="file-text"></span> Revisão por Equipe
+									</a> </li>
+									<li style="font-size: 12px;"><a class="nav-link"
+										href="/sarafloripa/pages/relatorios/relatorioContato.jsf"> <span
+											data-feather="file-text"></span> Contatos Revisionistas
+									</a> </li>
+								</ul></li>
+							
+							<li class="nav-item"><a class="nav-link"
+								href="/sarafloripa/pages/usuario/alterarSenha.jsf" role="button"
+								aria-haspopup="true" aria-expanded="false"> <span
+									data-feather="refresh-cw"></span> Alterar Senha
+							</a></li>
+						</ul>
+					</div>
+				</nav>
+
+		</div>
+	</div>
+</h:form>

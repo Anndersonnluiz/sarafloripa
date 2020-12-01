@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<h:form id="frmCadastroUsuario">
+
+			<div id="tudo">
+				<div style="display: block; padding: 4.1em;">
+
+					<h4>Cadastro Usuário</h4>
+					<hr />
+					<br />
+					<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label>Nome</label>
+							<h:inputText value="#{cadUsuarioMB.usuario.nome}"
+								class="form-control" placeholder="Email" />
+						</div>
+						<div class="form-group col-md-6">
+							<label>Email</label>
+							<h:inputText value="#{cadUsuarioMB.usuario.email}"
+								class="form-control" placeholder="Email" />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Login</label>
+							<h:inputText value="#{cadUsuarioMB.usuario.login}"
+								class="form-control" placeholder="Email" />
+						</div>
+						<div class="form-group col-md-3">
+							<label>Tipo de Acesso</label>
+							<h:selectOneMenu id="exampleAcesso" style="width: 100%;"
+								immediate="true" value="#{cadUsuarioMB.tipoacesso}"
+								converter="TipoAcessoConverter" styleClass="form-control">
+								<f:selectItem itemLabel="Selecione" itemValue="0"
+									noSelectionOption="true" />
+								<f:selectItems value="#{cadUsuarioMB.listaAcesso}"
+									var="AcessoSelecionado" itemLabel="#{AcessoSelecionado.descricao}"
+									itemValue="#{AcessoSelecionado}" />
+								<f:attribute name="listaAcesso"
+									value="#{cadUsuarioMB.listaAcesso}" />
+							</h:selectOneMenu>
+						</div>
+					</div>
+					
+					<br />
+					<hr />
+					<div align="center">
+
+						<p:commandLink ajax="false" update="growl" 
+							styleClass="btn btn-success" value="Confirmar"
+							action="#{cadUsuarioMB.salvar()}" />
+
+						<p:commandLink ajax="false" styleClass="btn btn-danger" style="margin-left:1%;"
+							value="Cancelar" action="#{cadUsuarioMB.cancelar()}" />
+
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="sarafloripaRVPU" transaction-type="RESOURCE_LOCAL">
+		<class>br.com.sarafloripaRV.model.Usuario</class>
+		<class>br.com.sarafloripaRV.model.Equipe</class>
+		<class>br.com.sarafloripaRV.model.Revisaovidas</class>
+		<class>br.com.sarafloripaRV.model.Fichainscricaorv</class>
+		<class>br.com.sarafloripaRV.model.Tipoacesso</class>
+		<class>br.com.sarafloripaRV.model.Acesso</class>
+		<class>br.com.sarafloripaRV.model.Tipoevento</class>
+		<class>br.com.sarafloripaRV.model.Membrosevento</class>
+		<class>br.com.sarafloripaRV.model.Evento</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://sistemadeltafinanceira.acessotemporario.net:3306/sarafloripa?useTimezone=true&amp;serverTimezone=UTC&amp;sessionVariables=transaction_isolation='READ-COMMITTED'"/>
+			<property name="javax.persistence.jdbc.user" value="local"/>
+			<property name="javax.persistence.jdbc.password" value="780920**"/>
+		</properties>
+	</persistence-unit>	
+</persistence>

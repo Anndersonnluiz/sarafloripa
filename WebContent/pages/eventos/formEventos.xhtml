@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<!-- Meta tags Obrigatórias -->
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous" />
+	<link href="../../resources/csslocal/dashboard.css" rel="stylesheet" />
+	<title>FICHA DE INSCRIÇÃO</title>
+
+
+
+</h:head>
+<h:body>
+	<h:form id="frmCadastroUsuario" acceptcharset="ISO-8859-1">
+
+		<div id="tudo" style="margin: 2%;">
+			<br />
+			<div align="center">
+				<img src="../../resources/img/sarafloripa.jpg" width="40%;" />
+			</div>
+			<br /> <br />
+			<h4>FICHA INSCRIÇÃO - #{formEventosMB.evento.nome}</h4>
+			<hr />
+			<br />
+			<h5>Dados Pessoais</h5>
+			<br />
+			<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Nome Completo*</label>
+					<h:inputText value="#{formEventosMB.membrosevento.nome}"
+						class="form-control" placeholder="Nome Completo" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Equipe*</label>
+					<h:selectOneMenu id="exampleEquipe" style="width: 100%;"
+						immediate="true" value="#{formEventosMB.equipe}"
+						converter="EquipeConverter" styleClass="form-control">
+						<f:selectItem itemLabel="Selecione" itemValue="0"
+							noSelectionOption="true" />
+						<f:selectItems value="#{formEventosMB.listaEquipe}"
+							var="equipeSelecionado" itemLabel="#{equipeSelecionado.nome}"
+							itemValue="#{equipeSelecionado}" />
+						<f:attribute name="listaEquipe"
+							value="#{formEventosMB.listaEquipe}" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Lider</label>
+					<h:inputText value="#{formEventosMB.membrosevento.lider}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Forma de Pagamento*</label>
+					<h:selectOneMenu id="exampleFormaPagamento" style="width: 100%;"
+						immediate="true"
+						value="#{formEventosMB.membrosevento.tipopagamento}"
+						styleClass="form-control">
+						<f:selectItem itemLabel="Selecione" itemValue="0"
+							noSelectionOption="true" />
+						<f:selectItem itemLabel="Cartão" itemValue="Cartão" />
+						<f:selectItem itemLabel="Depósito" itemValue="Depósito" />
+						<f:selectItem itemLabel="Dinheiro" itemValue="Dinheiro" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Participação*</label>
+					<h:selectOneMenu id="exampleParticipacao" style="width: 100%;"
+						immediate="true" value="#{formEventosMB.membrosevento.presenca}"
+						styleClass="form-control">
+						<f:selectItem itemLabel="Selecione" itemValue="0"
+							noSelectionOption="true" />
+						<f:selectItem itemLabel="Presencial" itemValue="Presencial" itemDisabled="#{formEventosMB.desabilitarPresencial}"/>
+						<f:selectItem itemLabel="Online" itemValue="Online" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			<br />
+			<hr />
+			<div align="center">
+				<p:commandLink style="width:80%;" ajax="false" update="growl"
+					styleClass="btn btn-success" value="LANÇAR FICHA"
+					action="#{formEventosMB.salvar()}" />
+			</div>
+			<br /> <br />
+		</div>
+	</h:form>
+</h:body>
+</html>

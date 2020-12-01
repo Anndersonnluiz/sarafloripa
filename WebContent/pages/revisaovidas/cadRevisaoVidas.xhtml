@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<h:form id="frmCadastroUsuario" acceptcharset="ISO-8859-1">
+
+			<div id="tudo">
+				<div style="display: block; padding: 4.1em;">
+
+					<h4>LANÇAMENTO PARA O REVISÃO DE VIDAS</h4>
+					<hr />
+					<br />
+					<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Data Inicio</label>
+							<h:inputText class="form-control"
+								value="#{cadRevisaoVidasMB.revisaovidas.dataini}"
+								mask="99/99/9999">
+								<f:convertDateTime pattern="dd/MM/yyyy"
+									timeZone="America/Sao_Paulo" />
+							</h:inputText>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Data Final</label>
+							<h:inputText class="form-control"
+								value="#{cadRevisaoVidasMB.revisaovidas.datafin}"
+								mask="99/99/9999">
+								<f:convertDateTime pattern="dd/MM/yyyy"
+									timeZone="America/Sao_Paulo" />
+							</h:inputText>
+						</div>
+						<div class="form-group col-md-3">
+							<label>Vagas</label>
+							<h:inputText value="#{cadRevisaoVidasMB.revisaovidas.vagas}"
+								class="form-control" placeholder="Email" />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Organizador</label>
+							<h:selectOneMenu id="exampleEquipe" style="width: 100%;"
+								immediate="true" value="#{cadRevisaoVidasMB.equipe}"
+								converter="EquipeConverter" styleClass="form-control">
+								<f:selectItem itemLabel="Selecione" itemValue="0"
+									noSelectionOption="true" />
+								<f:selectItems value="#{cadRevisaoVidasMB.listaEquipe}"
+									var="equipeSelecionado" itemLabel="#{equipeSelecionado.nome}"
+									itemValue="#{equipeSelecionado}" />
+								<f:attribute name="listaEquipe"
+									value="#{cadRevisaoVidasMB.listaEquipe}" />
+							</h:selectOneMenu>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Revisão do Arena ?</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadRevisaoVidasMB.revisaovidas.rede}" />
+							</div>
+
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Revisão ativo ?</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadRevisaoVidasMB.revisaovidas.ativo}" />
+							</div>
+
+						</div>
+					</div>
+					<br />
+					<hr />
+					<div align="center">
+
+						<p:commandLink ajax="false" update="growl" 
+							styleClass="btn btn-success" value="Confirmar"
+							action="#{cadRevisaoVidasMB.salvar()}" />
+
+						<p:commandLink ajax="false" styleClass="btn btn-danger" style="margin-left:1%;"
+							value="Cancelar" action="#{cadRevisaoVidasMB.cancelar()}" />
+
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

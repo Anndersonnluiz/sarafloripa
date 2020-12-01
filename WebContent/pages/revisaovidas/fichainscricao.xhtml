@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<!-- Meta tags Obrigatórias -->
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous" />
+	<link href="../../resources/csslocal/dashboard.css" rel="stylesheet" />
+	<title>FICHA DE INSCRIÇÃO</title>
+
+
+
+</h:head>
+<h:body>
+	<h:form id="frmCadastroUsuario" acceptcharset="ISO-8859-1">
+
+		<div id="tudo" style="margin: 2%;">
+			<br />
+			<div align="center">
+				<img src="../../resources/img/sarafloripa.jpg" width="40%;" />
+			</div>
+			<br /> <br />
+			<h4>FICHA INSCRIÇÃO REVISÃO DE VIDAS
+				#{fichaInscricaoMB.nomeRede} - N° #{fichaInscricaoMB.nInscricao}</h4>
+			<hr />
+			<br />
+			<h5>Dados Pessoais</h5>
+			<br />
+			<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Nome Completo*</label>
+					<h:inputText value="#{fichaInscricaoMB.fichainscricaorv.nome}"
+						class="form-control" placeholder="Nome Completo" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Data Nascimento*</label>
+					<h:inputText class="form-control"
+						value="#{fichaInscricaoMB.fichainscricaorv.datanasc}"
+						mask="99/99/9999">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:inputText>
+				</div>
+			</div>
+			<div class="form-group col-md-12">
+				<label>Telefone*</label>
+				<h:inputText value="#{fichaInscricaoMB.fichainscricaorv.telefone}"
+					class="form-control" placeholder="Email" />
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Equipe*</label>
+					<h:selectOneMenu id="exampleEquipe" style="width: 100%;"
+						immediate="true" value="#{fichaInscricaoMB.equipe}"
+						converter="EquipeConverter" styleClass="form-control">
+						<f:selectItem itemLabel="Selecione" itemValue="0"
+							noSelectionOption="true" />
+						<f:selectItems value="#{fichaInscricaoMB.listaEquipe}"
+							var="equipeSelecionado" itemLabel="#{equipeSelecionado.nome}"
+							itemValue="#{equipeSelecionado}" />
+						<f:attribute name="listaEquipe"
+							value="#{fichaInscricaoMB.listaEquipe}" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Lider</label>
+					<h:inputText value="#{fichaInscricaoMB.fichainscricaorv.lider}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Forma de Pagamento*</label>
+					<h:selectOneMenu id="exampleFormaPagamento" style="width: 100%;"
+						immediate="true"
+						value="#{fichaInscricaoMB.fichainscricaorv.formapagamento}"
+						styleClass="form-control">
+						<f:selectItem itemLabel="Selecione" itemValue="0"
+							noSelectionOption="true" />
+						<f:selectItem itemLabel="Cartão" itemValue="Cartao" />
+						<f:selectItem itemLabel="Depósito" itemValue="Deposito" />
+						<f:selectItem itemLabel="Dinheiro" itemValue="Dinheiro" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			<br />
+			<h5>Contatos Familia/Amigos</h5>
+			<br />
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Nome 1*</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.nomeamigo1}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Telefone 1*</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.telefoneamigo1}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Nome 2</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.nomeamigo2}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Telefone 2</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.telefoneamigo2}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Nome 3</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.nomeamigo3}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label>Telefone 3</label>
+					<h:inputText
+						value="#{fichaInscricaoMB.fichainscricaorv.telefoneamigo3}"
+						class="form-control" placeholder="Email" />
+				</div>
+			</div>
+
+
+		</div>
+
+		<br />
+		<hr />
+		<div align="center">
+			<p:commandLink style="width:80%;" ajax="false" update="growl"
+				styleClass="btn btn-success" value="LANÇAR FICHA"
+				action="#{fichaInscricaoMB.salvar()}" />
+		</div>
+		<br />
+		<br />
+
+
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>ADM SARA FLORIPA</title>
+	<link href="resources/css/cssLogin.css" rel="stylesheet"
+		type="text/css" />
+	<link rel="icon" href="resources/img/logotipoFinancemate.png"
+		type="image/x-icon" />
+
+	<!-- Bootstrap core CSS -->
+	<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+		media="screen" />
+
+	<!-- Font Awesome -->
+	<link href="resources/css/font-awesome.min.css" rel="stylesheet" />
+</h:head>
+<h:body style="width:100%;">
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		onsuccess="PF('statusDialog').hide()" />
+
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		<p:outputLabel value="Aguarde.." />
+		<br />
+		<img src="resources/img/ajax-carregando.gif" style="" />
+	</p:dialog>
+	<p:growl id="growl" showDetail="true" sticky="false" />
+	<h:form id="login">
+		<div id="tudo">
+			<div
+				style="display: block; padding: 4.9em; background-image: linear-gradient(to right, #DCDCDC,  #808080);">
+				<div
+					style="display: block; padding: 4em; background-image: linear-gradient(to right, #DCDCDC, #808080);">
+					<div style="display: block; padding: 4em; background: white;width: 40%;margin-left: 30%;border-radius:10px;"
+						align="center"> 
+						
+						<img src="resources/img/sarafloripa.jpg" width="50%;"
+							 />
+							<br/>
+						<div class="form-row" style="text-align: left;margin-left:10%;">
+							<div class="form-group" >
+
+								<label >LOGIN</label>
+								<br/>
+								<p:inputText id="nome"
+									style="padding:2px;color: black;font-size: 17px;width:90%;background:#DCDCDC;border:0px;border-radius:2px;height:40px;"
+									value="#{usuarioLogadoMB.login}" required="required"
+									requiredMessage="Campo Obrigatorio" />
+							</div>
+							<div class="form-group">
+								<label >SENHA</label>
+								<br/>
+								<p:password id="senha"  
+									style="padding:2px;color: black;font-size: 17px;width:90%;height:40px;background:#DCDCDC;border:0px;border-radius:2px;margin-top:8px;"
+									value="#{usuarioLogadoMB.senha}" required="required"
+									requiredMessage="Campo Obrigatorio" />
+							</div>
+						</div>
+						<div align="center">
+							<p:commandButton title="Entra" value="ENTRAR" styleClass="btn btn-primary"
+								style="width:82%;height: 39px;text-decoration: none;font-weight: bold;" actionListener="#{usuarioLogadoMB.validarUsuario()}"
+								action="#{usuarioLogadoMB.logar()}" update="growl">
+
+							</p:commandButton>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

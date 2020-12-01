@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/pages/templates/padrao.xhtml">
+	<ui:define name="corpo">
+		<h:form id="frmCadastroUsuario">
+
+			<div id="tudo">
+				<div style="display: block; padding: 4.1em;">
+
+					<h4>Cadastro de Acessos</h4>
+					<hr />
+					<br />
+					<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label>Descrição</label>
+							<h:inputText value="#{cadAcessoMB.tipoacesso.descricao}"
+								class="form-control" placeholder="Email" />
+						</div>
+					</div>
+					<h5>Acessos</h5>
+					<br />
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Menu Cadastro</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadAcessoMB.acesso.cadastro}" />
+							</div>
+
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Cadastro Usuario</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadAcessoMB.acesso.cadusuario}" />
+							</div>
+
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Cadastro Revisão</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadAcessoMB.acesso.cadrevisao}" />
+							</div>
+
+						</div>
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Excluir Revisionista</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadAcessoMB.acesso.exrevisionista}" />
+							</div>
+
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<label for="dataNasc">Cadastro Acesso</label>
+							<div>
+								<p:selectBooleanCheckbox
+									value="#{cadAcessoMB.acesso.cadacesso}" />
+							</div>
+
+						</div>
+					</div>
+					
+					<br />
+					<hr />
+					<div align="center">
+
+						<p:commandLink ajax="false" update="growl" 
+							styleClass="btn btn-success" value="Confirmar"
+							action="#{cadAcessoMB.salvar()}" />
+
+						<p:commandLink ajax="false" styleClass="btn btn-danger" style="margin-left:1%;"
+							value="Cancelar" action="#{cadAcessoMB.cancelar()}" />
+
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
